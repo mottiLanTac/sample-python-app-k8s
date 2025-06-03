@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-python-app
+  labels:
+    app: sample-python-app
+spec:
+  replicas: 2 # Let's run two pods
+  selector:
+    matchLabels:
+      app: sample-python-app
+  template:
+    metadata:
+      labels:
+        app: sample-python-app
+    spec:
+      containers:
+      - name: app
+        image: ghcr.io/mottilantac/sample-python-app:v1.0 # Make sure this matches your GHCR image
+        ports:
+        - containerPort: 5000
+        env:
+        - name: APP_VERSION
+          value: "1.0"
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "200m" # 0.2 CPU cores
+          requests:
+            memory: "64Mi"
+            cpu: "100m"

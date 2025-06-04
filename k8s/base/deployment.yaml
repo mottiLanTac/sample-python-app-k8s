@@ -10,6 +10,9 @@ spec:
     matchLabels:
       app: sample-python-app
   template:
+    spec:
+      imagePullSecrets:
+      - name: ghcr-creds
     metadata:
       labels:
         app: sample-python-app

@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: app
-        image: ghcr.io/mottilantac/sample-python-app:v1.0 # Make sure this matches your GHCR image
+        image: ghcr.io/mottilantac/sample-python-app:v1.0
+
         ports:
         - containerPort: 5000
         env:

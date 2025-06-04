@@ -10,16 +10,13 @@ spec:
     matchLabels:
       app: sample-python-app
   template:
-    spec:
-      imagePullSecrets:
-      - name: ghcr-creds
     metadata:
       labels:
         app: sample-python-app
     spec:
       containers:
       - name: app
-        image: ghcr.io/mottilantac/sample-python-app:v1.0 # Make sure this matches your GHCR image
+        image: ghcr.io/mottiLanTac/sample-python-app:v1.0 # Make sure this matches your GHCR image
         ports:
         - containerPort: 5000
         env:
